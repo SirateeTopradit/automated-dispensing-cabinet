@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "153898153358",
+    "project_id": "automated-dispensing-cabinet",
+    "storage_bucket": "automated-dispensing-cabinet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153898153358:android:dc7e457eedb0e3679060df",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153898153358-p1v2c9ijkvlrt8mimifuvc9r3854aaq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARFxZpooWWoptdL80g1NbV8134SdlxYCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153898153358-p1v2c9ijkvlrt8mimifuvc9r3854aaq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
