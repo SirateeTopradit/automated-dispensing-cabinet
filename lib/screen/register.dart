@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:flutter_application_1/screen/emailVerify.dart';
 
 import 'package:flutter_application_1/model/profile.dart';
 
@@ -124,7 +125,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         Navigator.pushReplacement(context,
                                             MaterialPageRoute(
                                                 builder: (context) {
-                                          return HomeScreen();
+                                          return emailVerify();
                                         }));
                                       });
                                     } on FirebaseAuthException catch (e) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/home.dart';
 import 'package:flutter_application_1/screen/welcome.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/screen/emailVerify.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
@@ -73,7 +74,7 @@ class Authenticate extends StatelessWidget {
     final firebaseUser = context.watch<User?>();
 
     if (firebaseUser != null) {
-      return WelcomeScreen();
+      return emailVerify();
     }
     return  HomeScreen();
   }
