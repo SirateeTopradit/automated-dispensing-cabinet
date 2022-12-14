@@ -33,7 +33,7 @@ class _emailVerifyState extends State<emailVerify> {
 
       timer = Timer.periodic(
         Duration(seconds: 3),
-        (_) => emailVerify(),
+        (_) => check(),
       );
     }
   }
@@ -43,6 +43,16 @@ class _emailVerifyState extends State<emailVerify> {
     timer?.cancel();
 
     super.dispose();
+  }
+
+  Future check() async{
+    await FirebaseAuth.instance.currentUser!.reload();
+
+    setState((){
+      _emailVerified = FirebaseAuth.instance.currentUser!.reload() as bool;
+    });
+
+    if(_emailVerified) timer?.cancel();
   }
 
   Future sendver() async{
@@ -64,7 +74,7 @@ class _emailVerifyState extends State<emailVerify> {
             child: Column(
               children: [
                 Text(
-                  "asdfsdfsdf",
+                  auth.currentUser!.email!,
                   style: TextStyle(fontSize: 25),
                 ),
                 ElevatedButton(
