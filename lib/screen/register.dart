@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:flutter_application_1/screen/emailVerify.dart';
+import 'package:multi_select_flutter/multi_select_flutter.dart';
 
 import 'package:flutter_application_1/model/profile.dart';
 
@@ -20,7 +21,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
-  Profile profile = Profile(email: ' ', password: ' ');
+  Profile profile = Profile(name: ' ' ,email: ' ', password: ' ');
   final Future<FirebaseApp> firebase = Firebase.initializeApp();
 
   @override
@@ -52,6 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+                            
                             TextFormField(
                               decoration: const InputDecoration(
                                 labelText: 'Email',
@@ -125,7 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         Navigator.pushReplacement(context,
                                             MaterialPageRoute(
                                                 builder: (context) {
-                                          return emailVerify();
+                                          return HomeScreen();
                                         }));
                                       });
                                     } on FirebaseAuthException catch (e) {

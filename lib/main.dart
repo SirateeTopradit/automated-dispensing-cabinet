@@ -74,7 +74,7 @@ class Authenticate extends StatelessWidget {
     final firebaseUser = context.watch<User?>();
 
     if (firebaseUser != null) {
-      return emailVerify();
+      return WelcomeScreen();
     }
     return  HomeScreen();
   }

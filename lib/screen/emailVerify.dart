@@ -47,9 +47,9 @@ class _emailVerifyState extends State<emailVerify> {
 
   Future check() async{
     await FirebaseAuth.instance.currentUser!.reload();
-
+    print("test1");
     setState((){
-      _emailVerified = FirebaseAuth.instance.currentUser!.reload() as bool;
+      _emailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
     });
 
     if(_emailVerified) timer?.cancel();
@@ -60,6 +60,7 @@ class _emailVerifyState extends State<emailVerify> {
       final user =FirebaseAuth.instance.currentUser!;
       await user.sendEmailVerification();
     }catch (e) {
+      print("test2");
       print(e.toString());
     }
   }
