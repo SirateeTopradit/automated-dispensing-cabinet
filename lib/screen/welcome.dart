@@ -85,8 +85,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                         title: Text("รายการ"),
                         subtitle: Text(
-                          document["list"],
+                          document["list"]+"\n"+(document["flag"]=="1" ? " Avaliable":" Not avaliable"),
                         ),
+
                         trailing: IconButton(
                           icon: Icon(Icons.delete),
                           onPressed: () => setState(() {
@@ -219,6 +220,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               "name": profile.name,
                               "list": med2,
                               "time": datetime,
+                              "flag": "1",
                             });
                             med = ["0", "0", "0", "0", "0"];
                             formKey.currentState!.reset();
