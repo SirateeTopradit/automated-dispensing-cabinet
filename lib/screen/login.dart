@@ -111,7 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                         Navigator.pushReplacement(context,
                                             MaterialPageRoute(
                                                 builder: (context) {
-                                          return WelcomeScreen();
+                                                  if(profile.email=="123456@gmail.com") return WelcomeScreen();
+                                                  else return HomeScreen();
                                         }));
                                       });
                                     } on FirebaseAuthException catch (e) {

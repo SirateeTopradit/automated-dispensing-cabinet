@@ -48,6 +48,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Firebase Authentication',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
         // This is the theme of your application.
         //
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         fontFamily: 'prompt',
         primarySwatch: Colors.blue,
+        
         
       ),
         home: Authenticate(),
@@ -74,7 +76,7 @@ class Authenticate extends StatelessWidget {
     final firebaseUser = context.watch<User?>();
 
     if (firebaseUser != null) {
-      return WelcomeScreen();
+      if(firebaseUser.email=="123456@gmail.com") return WelcomeScreen();
     }
     return  HomeScreen();
   }
